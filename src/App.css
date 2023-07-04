@@ -1,38 +1,214 @@
 .App {
   text-align: center;
 }
+/*! inputs-3 start  */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.inputContainer {
+  position: relative;
+  /* display: flex; */
   flex-direction: column;
+  gap: 10px;
+}
+
+#inputField {
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 12px 15px;
+  color: black;
+  font-weight: 500;
+  outline: none;
+  caret-color: rgb(155, 78, 255);
+  transition-duration: 0.3s;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+#inputField:focus,
+#inputField:valid {
+  background-color: #ddd;
+  transition-duration: 0.3s;
+}
+/*! inputs-3 end  */
+
+/*todo button premium  start*/
+.button {
+  cursor: pointer;
+  /* margin: 0 auto; */
+  display: flex;
+  padding: 1.2em 0.8em;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
+  background: linear-gradient(
+      15deg,
+      #880088,
+      #aa2068,
+      #cc3f47,
+      #de6f3d,
+      #f09f33,
+      #de6f3d,
+      #cc3f47,
+      #aa2068,
+      #880088
+    )
+    no-repeat;
+  background-size: 300%;
+  background-position: left center;
+  transition: background 0.3s ease;
+  color: #fff;
+}
+
+.button:hover {
+  background-size: 320%;
+  background-position: right center;
+}
+
+.button:hover svg {
+  fill: #fff;
+}
+
+.button svg {
+  width: 20px;
+  fill: #f09f33;
+  transition: 0.3s ease;
+}
+
+/*todo button premium  end*/
+/* todo button form start */
+.form-button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 8px 65px;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 500;
+  font-size: 17px;
+  border-radius: 5px;
+  overflow: hidden;
+  color: ghostwhite;
+}
+
+.form-button span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
+
+.form-button:hover span {
+  color: black;
+}
+
+.form-button::before,
+.form-button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.form-button::before {
+  content: "";
+
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+  background: linear-gradient(
+    15deg,
+    #880088,
+    #aa2068,
+    #cc3f47,
+    #de6f3d,
+    #f09f33,
+    #de6f3d,
+    #cc3f47,
+    #aa2068,
+    #880088
+  );
+}
+
+.form-button:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+/* todo button form end  */
+/* ! button delete */
+.button-delete {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  right: -5px;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button-delete:hover {
+  width: 110px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.button-delete:hover .svgIcon {
+  width: 50px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
+}
+
+.button-delete::before {
+  position: absolute;
+  top: -20px;
+  content: "Delete";
   color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
 }
 
-.App-link {
-  color: #61dafb;
+.button-delete:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(30px);
+  transition-duration: 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ! button delete end */
+.contact-item span {
+  margin-right: 10px;
+  margin-top: 15px;
+  width: 100px;
+  padding: 0px 30px;
+  border-bottom: 2px solid #474747;
+  font-weight: 600;
+  font-size: 17px;
 }
+
+/* .name-01 {
+  padding: 0px 20px;
+} */
